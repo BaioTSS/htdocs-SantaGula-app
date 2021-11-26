@@ -37,7 +37,7 @@ class PedidoController extends Controller
       }elseif ($menu == "config") {
         $turnos = Hora::all();
         return view('admin.gestion.config')->with(compact('turnos'));
-      }elseif ($menu == "pdf") {
+      }//elseif ($menu == "pdf") {
         //$ultimaCaja = Caja::orderBy('id', 'desc')->first();
         //$carts = Cart::where('status', '=','entregado')->get();
         //$cartsEntregados = $carts->count();
@@ -54,8 +54,8 @@ class PedidoController extends Controller
         //);
         //$pdf->loadHTML('<h1>Test</h1>');
         //return $pdf->stream();
-        return view('admin.gestion.tiket');
-      }
+        //return view('admin.gestion.tiket');
+      //}
 
   }
 
@@ -161,6 +161,9 @@ class PedidoController extends Controller
         $turno->cupos = $request->input('cupos');
         $turno->save();
         return back();
+      }elseif($menu == "pdf") {
+        $cart = Cart::find($request->input('cart_id'));
+        return view('admin.gestion.ticket')->with(compact('cart'));
       }
   }
 

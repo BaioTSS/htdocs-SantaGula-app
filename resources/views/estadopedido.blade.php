@@ -11,7 +11,7 @@
     <div class="section" style="padding-bottom: 10px;padding-top: 10px;">
       <h3 class="title text-center">Mis pedidos</h3>
 
-      <ul class="nav nav-tabs" style="background: #000000;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
+      <ul class="nav nav-tabs" style="background: #008c45;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="tab" href="{{ url('/home') }}">
             <span class="material-icons">add_shopping_cart</span>
@@ -34,33 +34,33 @@
             @foreach($carts as $cart)
             @if($cart->status == "pendiente" or $cart->status == "cocinando" or $cart->status == "en camino" or $cart->status == "listo")
             <div class="col-sm-4">
-              <div class="alert alert-danger" style="border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;">
+              <div class="alert alert-danger" style="border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;background-color: #008c45;">
                 <div class="container-fluid">
                   <h4 class="container-fluid text-left">Codigo del pedido #{{ $cart->id }}</h4>
 
                   @if($cart->status == "pendiente")
-                  <div class="alert alert-warning text-left" style="border-radius: 10px;align-items: center;padding-top: 5px;padding-bottom: 5px;">
+                  <div class="alert alert-warning text-left" style="border-radius: 10px;align-items: center;padding-top: 5px;padding-bottom: 5px;background-color: #cd212a;">
                     Tu pedido esta pendiente
                     <span class="material-icons" style="vertical-align: middle;">pending_actions</span>
                   </div>
                   @elseif($cart->status == "cocinando")
-                  <div class="alert alert-warning text-left" style="border-radius: 10px;align-items: center;padding-top: 5px;padding-bottom: 5px;">
+                  <div class="alert alert-warning text-left" style="border-radius: 10px;align-items: center;padding-top: 5px;padding-bottom: 5px;background-color: #cd212a;">
                     Tu pedido esta en la cocina
                     <span class="material-icons" style="vertical-align: middle;">restaurant_menu</span>
                   </div>
                   @elseif($cart->status == "en camino")
-                  <div class="alert alert-warning text-left" style="border-radius: 10px;align-items: center;padding-top: 5px;padding-bottom: 5px;">
+                  <div class="alert alert-warning text-left" style="border-radius: 10px;align-items: center;padding-top: 5px;padding-bottom: 5px;background-color: #cd212a;">
                     Tu pedido esta en camino
                     <span class="material-icons" style="vertical-align: middle;">delivery_dining</span>
                   </div>
                   @elseif($cart->status == "listo")
-                  <div class="alert alert-warning text-left" style="border-radius: 10px;align-items: center;padding-top: 5px;padding-bottom: 5px;">
+                  <div class="alert alert-warning text-left" style="border-radius: 10px;align-items: center;padding-top: 5px;padding-bottom: 5px;background-color: #cd212a;">
                     Tu pedido te esta esperando
                     <span class="material-icons" style="vertical-align: middle;">done_outline</span>
                   </div>
                   @endif
 
-                  <div class="alert alert-warning" style="border-radius: 10px;">
+                  <div class="alert alert-warning" style="border-radius: 10px;background-color: #cd212a;">
                     <p class="text-left">Detalles:</p>
 
                       <table class="table">

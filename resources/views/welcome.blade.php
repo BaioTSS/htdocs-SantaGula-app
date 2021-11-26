@@ -78,7 +78,7 @@
   </div>
 </div>
 
-<div class="main main-raised" style="margin-top: -450px;">
+<div class="main main-raised" style="margin-top: -300px;">
   <div>
 
     <div class="section text-center" style="padding-bottom: 10px;padding-top: 10px;">
@@ -91,7 +91,7 @@
         <div class="form-group mx-sm-3 mb-2" style="margin-top: 13px;padding-right: 7px;">
           <input class="form-control" type="text" placeholder="¿Qué te gustaria cenar hoy?" name="query" id="search">
         </div>
-        <button class="btn btn-primary btn-just-icon" type="submit" aria-haspopup="true" aria-expanded="false"style="background-color: #cd212a;">
+        <button class="btn btn-primary btn-just-icon" type="submit" aria-haspopup="true" aria-expanded="false" style="background-color: #008c45;">
             <i class="material-icons">search</i>
         </button>
       </form>
