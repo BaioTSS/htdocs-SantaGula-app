@@ -31,9 +31,22 @@
 
               <div class="text-center">
                 <!-- Button trigger modal -->
+                @guest
+  							@if (Route::has('login'))
+                <div class="alert alert-success" role="alert">
+                    Para realizar un pedido es necesario iniciar session
+                </div>
+  					    <li style="list-style: none;">
+                  <a class="btn btn-primary btn-round nav-link" href="{{ route('login') }}">
+                    <i class="material-icons">login</i> Iniciar session
+                  </a>
+  					    </li>
+                @endif
+                @else
                 <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddToCart">
                   <i class="material-icons">add</i> Añadir al pedido
                 </button>
+                @endif
               </div>
 
               <div class="row">
