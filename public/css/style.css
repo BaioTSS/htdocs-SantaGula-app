@@ -1,6 +1,7 @@
 * {
     font-size: 14px;
-    font-family: 'Times New Roman';
+    font-family: 'Arial';
+    font-weight: bold;
 }
 
 td,
@@ -53,8 +54,8 @@ th.precio {
 }
 
 .ticket {
-    width: 189px;
-    max-width: 189px;
+    width: 195px;
+    max-width: 195px;
 }
 
 img {
