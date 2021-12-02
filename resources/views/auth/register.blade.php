@@ -50,6 +50,7 @@
                     <input id="phone" type="phone" placeholder="Tel (ej: 3404508282 sin 0̶  y 1̶5̶)" class="form-control" name="phone" value="{{ old('phone') }}" required autofocus>
 									</div>
 
+
 									<div class="input-group">
 										<span class="input-group-addon">
 											<i class="material-icons">lock_outline</i>

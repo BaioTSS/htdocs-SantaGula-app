@@ -4,9 +4,6 @@
 
 @section('styles')
     <style>
-        #008c45
-        #f4f5f0
-        #cd212a
         .team .row .col-md4{
             margin-bottom: 5rem;
         }
@@ -101,8 +98,10 @@
           @foreach ($categorias as $categoria)
           <div class="col-sm-4">
             <div class="team-player" style="margin-top: 20px;">
-              <img src="{{ $categoria->featured_imagen_url }}"
-                alt="Imagen representativa de la categoria {{ $categoria->nombre }}" class="img-raised img-circle">
+              <a href="{{ url('categorias/'.$categoria->id) }}">
+                <img src="{{ $categoria->featured_imagen_url }}"
+                  alt="Imagen representativa de la categoria {{ $categoria->nombre }}" class="img-raised img-circle">
+              </a>
               <h4 class="title" style="margin-bottom: 5px;margin-top: 15px;">
                 <a href="{{ url('categorias/'.$categoria->id) }}">{{ $categoria->nombre }}</a>
               </h4>
@@ -119,12 +118,14 @@
 
     <div class="section text-center section-landing">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-sm-8 col-sm-offset-2">
           <h2 class="title">Lo mejor en tu mesa</h2>
-          <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
+          <p class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't
+            scroll to get here. Add a button if you want the user to see more.
+          </p>
         </div>
       </div>
-      <div class="features">
+      <!--<div class="features">
         <div class="row">
           <div class="col-md-4">
             <div class="info">
@@ -154,7 +155,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
     </div>
 
 

@@ -9,7 +9,14 @@
         <div class="ticket">
 
 
-            <p class="centrado observacion">PEDIDO #{{ $cart->id }}<br>Para las {{ $cart->horario }}Hs<br>San Carlos Centro</p>
+            <p class="centrado observacion">PEDIDO #{{ $cart->id }}<br>
+              Cliente: {{ $cart->cliente->name}}<br>
+              Para las {{ $cart->horario }}Hs<br>
+              Entrega tipo {{ $cart->entrega_tipo }}<br>
+              @if($cart->entrega_tipo == "delivery")
+                Direccion {{ $cart->direccion }}
+              @endif
+            </p>
             <table>
                 <thead>
                     <tr>
@@ -30,14 +37,15 @@
                 </tbody>
                 @endforeach
                 <td></td>
-                <td class="precio">TotalL</td>
+                
+                <td class="precio">Total</td>
                 <td class="observacion">$ {{ $cart->total }}</td>
             </table>
 
             @if($cart->entrega_tipo == "delivery")
               <p>DELIVERY INCLUIDO</p>
             @endif
-            <p class="centrado">¡GRACIAS POR SU COMPRA!<br>SantaGula</p>
+            <p class="centrado">¡GRACIAS POR SU COMPRA!</p>
 
         </div>
         <button class="oculto-impresion" onclick="imprimir()">Imprimir</button>

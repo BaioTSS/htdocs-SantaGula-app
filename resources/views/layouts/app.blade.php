@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8" />
-	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+	<!--<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="../assets/img/favicon.png">-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<title>Santa Gula</title>
@@ -43,23 +43,29 @@
 							@guest
 							@if (Route::has('login'))
 					    <li>
-					        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+					        <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
 					    </li>
 							@endif
 							@if (Route::has('register'))
 					    <li>
-					        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+					        <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarme') }}</a>
 					    </li>
 							@endif
 							@else
 							<li class="nav-item dropdown">
-							    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-							    		{{ Auth::user()->name }}
-							    </a>
+
+										<a class="nav-link dropdown-toggle" href="{{ url('/home') }}">
+												Mis pedidos
+										</a>
+
+
+										<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+								    		{{ Auth::user()->name }}
+								    </a>
+
+
+
 							    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-									<li>
-											<a href="{{ url('/home') }}">Mis pedidos</a>
-									</li>
 									@if (auth()->user()->admin)
 									<li>
 										<a class="dropdown-item" href="{{ url('/admin/categorias') }}">

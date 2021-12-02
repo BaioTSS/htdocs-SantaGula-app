@@ -12,6 +12,16 @@
 // * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 // Bootstrap Functions
+$primary: #008c45;
+$info: #f4f5f0;
+$default:#cd212a;
+
+$theme-colors: (
+    "primary": $primary,
+    "info": $info,
+    "default": $default,
+);
+
 @import "material-kit/bootstrap/functions";
 
 // Custom Variables

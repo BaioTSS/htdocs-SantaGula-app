@@ -16,7 +16,7 @@ class CartController extends Controller
         $cart->status = 'pendiente';
         if ($request->deliveryBtn == "Enable") {
           $cart->entrega_tipo = 'delivery';
-          $cart->direccion =  $request->direccion;
+          $cart->direccion =  $request->direccion.' '.$request->localidad;
           $cart->total = $cart->getTotal()+100;
         }else {
             $cart->entrega_tipo = 'takeaway';

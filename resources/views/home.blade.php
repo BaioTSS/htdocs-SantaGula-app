@@ -102,67 +102,105 @@
       </div>
 
       <p><strong>Importe a pagar:</strong> $ {{ auth()->user()->cart->getTotal() }}
-              <label id="sumaDelivery"> + $100(delivery)</label>
+              <label id="sumaDelivery"> + $100 (delivery)</label>
       </p>
 
       <div class="text-center">
         <form method="post" action="{{ url('/order') }}">
           @csrf
-          <div class="col-sm">
+          <div class="container">
+            <div class="row">
+
               <div class="col-sm-4">
-                <div class="form-group label-floating">
-                  <div style="display: flex;justify-content: center;align-items: center;">
-                    <div class="col-sm-6" style="display: flex;align-items: center;">
+                <div class="row">
+                  <div class="form-group label-floating">
+                    <div style="display: flex;justify-content: left;align-items: center;">
+                      <div class="col-sm-6" style="display: flex;align-items: center;">
 
-                        <i class="control-label material-icons">schedule</i>
-                        <div class="mt-1" style="margin-left: 10px">Horario</div>
+                          <i class="control-label material-icons">schedule</i>
+                          <div class="mt-1" style="margin-left: 10px">Horario</div>
 
-                    </div>
-                    <div class="col-sm-6">
-                      <select class="form-control text-center" name="horario">
-                        @foreach($turnos as $turno)
-                          <option value="{{ $turno->horarios }}">{{ $turno->horarios }}</option>
-                        @endforeach
-                        @if(empty($turno))
-                          <option value="#">No disponible</option>
-                        @endif
-                      </select>
+                      </div>
+                      <div class="col-sm-4">
+                        <select class="form-control text-center" name="horario">
+                          @foreach($turnos as $turno)
+                            <option value="{{ $turno->horarios }}">{{ $turno->horarios }}</option>
+                          @endforeach
+                          @if(empty($turno))
+                            <option value="#">No disponible</option>
+                          @endif
+                        </select>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-4">
-                <div class="text-left radio" style="display: flex;align-items: center;">
-                  <span class="material-icons">
-                    delivery_dining
-                  </span>
-                	<label>
-                		<input type="radio" value="Enable" name="deliveryBtn" checked style="background-color: #cd212a">
-                    Delivery
-                  </label>
-                  <input style="margin-left: 30px;" type="text" name="direccion" placeholder="Domicilio y localidad" value="">
+
+              <div class="col-sm-6">
+                <div class="row">
+
+
+
+                  <div class="col-sm-12">
+                    <div class="text-left radio" style="display: flex;align-items: center;">
+                      <span class="material-icons">
+                        delivery_dining
+                      </span>
+                      <label>
+                        <input type="radio" value="Enable" name="deliveryBtn" checked>
+                        Delivery
+                      </label>
+                      <input style="margin-left: 15px;" type="text" name="direccion" placeholder="Domicilio" value="">
+                    </div>
+                  </div>
+
+
+                  <div class="col-sm-6" id="localidad">
+                    <div class="text-left radio" style="display: flex;align-items: center;">
+
+                      <span class="material-icons">location_on</span>
+                      <label style="padding-left: 15px;">Localidad</label>
+                      <select class="form control form-select" name="localidad" style="margin-left: 15px;">
+                        <option value="San Carlos Centro">San Carlos Centro</option>
+                        <option value="San Carlos Sud">San Carlos Sud</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12">
+                    <div class="text-left radio" style="display: flex;align-items: center;">
+                      <span class="material-icons">
+                      store
+                      </span>
+                      <label>
+                        <input type="radio" value="Disable" name="deliveryBtn">
+                        Takeaway (Retiro en local)
+                      </label>
+                    </div>
+                  </div>
+
+
+
                 </div>
-                <div class="text-left radio" style="display: flex;align-items: center;">
-                  <span class="material-icons">
-                  store
-                  </span>
-                	<label>
-                		<input type="radio" value="Disable" name="deliveryBtn">
-                    Takeaway
-                	</label>
-                </div>
-                <script>
-                  $('input[name="deliveryBtn"]').on('change', function(){
-                      $('input[name="direccion"]').prop('hidden',this.value!="Enable")
-                      $('#sumaDelivery').prop('hidden',this.value!="Enable");
-                  });
-                </script>
               </div>
-          </div>
-          <div class="col-sm-4">
-            <button class="btn btn-primary btn-round" style="background-color: #008c45;">
-              <i class="material-icons">done</i> Confirmar pedido
-            </button>
+
+              <script>
+                $('input[name="deliveryBtn"]').on('change', function(){
+                    $('input[name="direccion"]').prop('hidden',this.value!="Enable")
+                    $('#sumaDelivery').prop('hidden',this.value!="Enable");
+                    $('#localidad').prop('hidden',this.value!="Enable");
+                });
+              </script>
+
+
+              <div class="col-sm-12" style="justify-content: center;">
+                <button class="btn btn-primary btn-round" style="background-color: #008c45;">
+                  <i class="material-icons">done</i> Confirmar pedido
+                </button>
+              </div>
+
+
+            </div>
           </div>
         </form>
       </div>

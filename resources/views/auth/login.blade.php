@@ -50,13 +50,19 @@
 									</div>
 
 								</div>
-								<div class="footer text-center">
-									<button type="submit" class="btn btn-simple btn-primary btn-lg">Iniciar sesión</button>
+								<div class="text-center">
+									<a href="{{ route('password.request') }}" style="color: #008c45;">
+	                    {{ __('¿Olvidaste tu contraseña?') }}
+	                </a>
 								</div>
 
-                <!--<a class="btn btn-link" href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
-                </a>-->
+								<div class="footer text-center">
+									<button type="submit" class="btn btn-simple btn-primary btn-lg" style="color: #f4f5f0;background-color: #008c45;">
+										Iniciar sesión
+									</button>
+								</div>
+
+
 
 							</form>
 						</div>
