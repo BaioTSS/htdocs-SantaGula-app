@@ -59,26 +59,25 @@
               <td class="text-center">
                   <img src="{{ $detail->producto->featured_imagen_url }}" height="50" alt="No posee imagen">
               </td>
-              <td class="col-md-2 text-left">
+              <td class="col-md-2 text-left" style="vertical-align: middle;">
                 <a href="{{ url('/platos/'.$detail->producto->id) }}" target="_blank">
                   {{ $detail->producto->nombre }}
                 </a>
               </td>
-              <td class="col-md-4 text-left">
+              <td class="col-md-4 text-left" style="vertical-align: middle;">
                   @if($detail->observacion == NULL)
 
                   @else
                     {{ $detail->observacion }}
                   @endif
-                </a>
               </td>
-              <td class="text-center">
+              <td class="text-center" style="vertical-align: middle;">
                 $ {{ $detail->producto->precio }}
               </td>
-              <td class="text-center">
+              <td class="text-center" style="vertical-align: middle;">
                 {{ $detail->quantity }}
               </td>
-              <td class="text-center">
+              <td class="text-center" style="vertical-align: middle;">
                 $ {{ $detail->quantity * $detail->producto->precio }}
               </td>
               <td class="col-md-3 text-center td-actions text-right">

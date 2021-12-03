@@ -14,18 +14,18 @@
                       <div class="avatar">
                           <img src="{{ $plato->featured_imagen_url }}" alt="Circle Image" class="img-circle img-responsive img-raised">
                       </div>
-                      <div class="name">
-                          <h3 class="title">{{ $plato->nombre }}</h3>
-                          <h6>{{ $plato->categoria_nombre }}</h6>
-                      </div>
                       @if (session('notificacion'))
-                          <div class="alert alert-success" role="alert">
+                          <div class="alert alert-success" role="alert" style="margin-top: 15px;">
                               {{ session('notificacion') }}
                           </div>
                       @endif
+                      <div class="name">
+                          <h3 class="title" style="margin-bottom: 3px;margin-top: 15px;">{{ $plato->nombre }}</h3>
+                          <p>Categoria {{ $plato->categoria_nombre }}</p>
+                      </div>
                   </div>
               </div>
-              <div class="description text-center">
+              <div class="description text-center" style="margin-top: 0px;">
                     <p>{{ $plato->descripcion }}</p>
               </div>
 
@@ -37,15 +37,23 @@
                     Para realizar un pedido es necesario iniciar session
                 </div>
   					    <li style="list-style: none;">
-                  <a class="btn btn-primary btn-round nav-link" href="{{ route('login') }}">
+                  <a class="btn btn-primary btn-round nav-link" href="{{ route('login') }}" style="color: #f4f5f0;background-color: #008c45;">
                     <i class="material-icons">login</i> Iniciar session
                   </a>
   					    </li>
                 @endif
                 @else
-                <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddToCart">
+                <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddToCart" style="color: #f4f5f0;background-color: #008c45;">
                   <i class="material-icons">add</i> Añadir al pedido
                 </button>
+                <div class="btn-group btn-group-justified" role="group" aria-label="Basic mixed styles example">
+                  <a class="btn btn-primary btn-round btn" href="{{ url('categorias/'.$plato->categoria->id) }}" style="color: #f4f5f0;background-color: #008c45;">
+                    <i class="material-icons">reply</i> {{ $plato->categoria_nombre }}
+                  </a>
+                  <a class="btn btn-primary btn-round" href="{{ url('/home') }}" style="color: #f4f5f0;background-color: #008c45;">
+                    <i class="material-icons">shopping_bag</i> Mis pedidos
+                  </a>
+                </div>
                 @endif
               </div>
 

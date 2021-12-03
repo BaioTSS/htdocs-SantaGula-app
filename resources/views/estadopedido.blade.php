@@ -9,7 +9,7 @@
 <div class="main main-raised">
   <div class="container">
     <div class="section" style="padding-bottom: 10px;padding-top: 10px;">
-      <h3 class="title text-center">Mis pedidos</h3>
+      <h3 class="title text-center">Mis Pedidos</h3>
 
       <ul class="nav nav-tabs" style="background: #008c45;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
         <li class="nav-item">

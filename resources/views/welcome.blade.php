@@ -81,7 +81,7 @@
     <div class="section text-center" style="padding-bottom: 10px;padding-top: 10px;">
 
 
-      <h2 class="title">Conocé nuestros platos</h2>
+      <h3 class="title">Conocé nuestros platos</h3>
 
 
       <form class="form-inline row" method="get" action="{{ url('/search') }}"  style="justify-content: center;">
@@ -94,21 +94,23 @@
       </form>
 
       <div class="team" style="margin-top: 0px;">
-        <div class="row" style="justify-content: center;">
-          @foreach ($categorias as $categoria)
-          <div class="col-sm-4">
-            <div class="team-player" style="margin-top: 20px;">
-              <a href="{{ url('categorias/'.$categoria->id) }}">
-                <img src="{{ $categoria->featured_imagen_url }}"
-                  alt="Imagen representativa de la categoria {{ $categoria->nombre }}" class="img-raised img-circle">
-              </a>
-              <h4 class="title" style="margin-bottom: 5px;margin-top: 15px;">
-                <a href="{{ url('categorias/'.$categoria->id) }}">{{ $categoria->nombre }}</a>
-              </h4>
-              <p class="description" style="margin-top: 5px;">{{ $categoria->descripcion }}</p>
+        <div class="container">
+          <div class="row" style="justify-content: center;">
+            @foreach ($categorias as $categoria)
+            <div class="col-sm-4">
+              <div class="team-player" style="margin-top: 20px;">
+                <a href="{{ url('categorias/'.$categoria->id) }}">
+                  <img src="{{ $categoria->featured_imagen_url }}"
+                    alt="Imagen representativa de la categoria {{ $categoria->nombre }}" class="img-raised img-circle">
+                </a>
+                <h4 class="title" style="margin-bottom: 5px;margin-top: 15px;">
+                  <a href="{{ url('categorias/'.$categoria->id) }}">{{ $categoria->nombre }}</a>
+                </h4>
+                <p class="description" style="margin-top: 5px;">{{ $categoria->descripcion }}</p>
+              </div>
             </div>
+            @endforeach
           </div>
-          @endforeach
         </div>
       </div>
 
@@ -117,12 +119,14 @@
 
 
     <div class="section text-center section-landing">
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <h2 class="title">Lo mejor en tu mesa</h2>
-          <p class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't
-            scroll to get here. Add a button if you want the user to see more.
-          </p>
+      <div class="container">
+        <div class="row" style="justify-content: center;">
+          <div class="col-sm-8 col-sm-offset-2">
+            <h3 class="title">¿Todavía no te registraste?</h3>
+            <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddToCart" style="color: #f4f5f0;background-color: #008c45;">
+              <i class="material-icons">app_registration</i> Registrarme
+            </button>
+          </div>
         </div>
       </div>
       <!--<div class="features">

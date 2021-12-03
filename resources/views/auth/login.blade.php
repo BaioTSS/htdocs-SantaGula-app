@@ -50,7 +50,12 @@
 									</div>
 
 								</div>
-								<div class="text-center">
+								<div class="text-center" style="margin-top: 10px;margin-bottom: 10px;">
+									<a href="{{ route('register') }}" style="color: #008c45;">
+	                    {{ __('Registrarme') }}
+	                </a>
+								</div>
+								<div class="text-center" style="margin-bottom: 10px;">
 									<a href="{{ route('password.request') }}" style="color: #008c45;">
 	                    {{ __('¿Olvidaste tu contraseña?') }}
 	                </a>

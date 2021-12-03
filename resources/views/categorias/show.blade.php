@@ -53,19 +53,23 @@
                     <p>{{ $categoria->descripcion }}</p>
               </div>
 
-              <div class="team text-center">
-                <div class="row" style="justify-content: center;">
-                  @foreach ($productos as $producto)
-                  <div class="col-md-4">
-                    <div class="team-player">
-                      <img src="{{ $producto->featured_imagen_url }}" alt="Imagen no encontrada" class="img-circle img-raised">
-                      <h4 class="title" style="margin-bottom: 5px;margin-top: 15px;">
-                        <a href="{{ url('platos/'.$producto->id) }}">{{ $producto->nombre }}</a>
-                      </h4>
-                      <p class="description" style="margin-top: 5px;">{{ $producto->descripcion }}</p>
+              <div class="team text-center" style="margin-top: 0px;">
+                <div class="container">
+                  <div class="row" style="justify-content: center;">
+                    @foreach ($productos as $producto)
+                    <div class="col-md-4">
+                      <div class="team-player" style="margin-top: 20px;">
+                        <a href="{{ url('platos/'.$producto->id) }}">
+                          <img src="{{ $producto->featured_imagen_url }}" alt="Imagen no encontrada" class="img-circle img-raised">
+                        </a>
+                        <h4 class="title" style="margin-bottom: 5px;margin-top: 15px;">
+                          <a href="{{ url('platos/'.$producto->id) }}">{{ $producto->nombre }}</a>
+                        </h4>
+                        <p class="description" style="margin-top: 5px;">{{ $producto->descripcion }}</p>
+                      </div>
                     </div>
+                    @endforeach
                   </div>
-                  @endforeach
                 </div>
                 <div class="text-center mt-10" style="padding-top: 20px;">
                     {{ $productos->links() }}
