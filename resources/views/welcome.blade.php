@@ -118,14 +118,19 @@
     </div>
 
 
-    <div class="section text-center section-landing">
+    <div class="section section-landing">
       <div class="container">
-        <div class="row" style="justify-content: center;">
+        <div class="row" style="display: flex;">
           <div class="col-sm-8 col-sm-offset-2">
-            <h3 class="title">¿Todavía no te registraste?</h3>
-            <a href="{{ route('register') }}" class="btn btn-primary btn-round" data-toggle="modal"  style="color: #f4f5f0;background-color: #008c45;">
-              <i class="material-icons">app_registration</i> Registrarme
-            </a>
+            <h3 class="title text-center">¿Todavía no te registraste?</h3>
+            <div class="btn-group btn-group-justified" role="group" aria-label="Basic mixed styles example">
+              <a class="btn btn-primary btn-round btn" href="{{ route('login') }}" style="color: #f4f5f0;background-color: #008c45;">
+                <i class="material-icons">login</i> Iniciar Sesion
+              </a>
+              <a class="btn btn-primary btn-round btn" href="{{ route('register') }}" style="color: #f4f5f0;background-color: #008c45;">
+                <i class="material-icons">app_registration</i> Registrarme
+              </a>
+            </div>
           </div>
         </div>
       </div>

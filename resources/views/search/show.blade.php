@@ -51,6 +51,9 @@
 
               <div class="description text-center">
                   <p>Se encontraron {{ $productos->count() }} resultados para el término {{ $query }}</p>
+                  <a class="btn btn-primary btn-round btn" href="{{ url('/') }}" style="color: #f4f5f0;background-color: #008c45;">
+                    <i class="material-icons">reply</i> Volver
+                  </a>
               </div>
 
               <div class="team text-center">
