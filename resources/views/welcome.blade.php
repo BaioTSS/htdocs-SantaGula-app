@@ -123,9 +123,9 @@
         <div class="row" style="justify-content: center;">
           <div class="col-sm-8 col-sm-offset-2">
             <h3 class="title">¿Todavía no te registraste?</h3>
-            <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddToCart" style="color: #f4f5f0;background-color: #008c45;">
+            <a href="{{ route('register') }}" class="btn btn-primary btn-round" data-toggle="modal"  style="color: #f4f5f0;background-color: #008c45;">
               <i class="material-icons">app_registration</i> Registrarme
-            </button>
+            </a>
           </div>
         </div>
       </div>
