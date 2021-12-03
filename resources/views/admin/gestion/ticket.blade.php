@@ -23,7 +23,7 @@
                         <th class="codigo">Cod</th>
                         <th class="cantidad">Cant</th>
                         <th class="observacion">Detalles</th>
-                        <th class="precio">Unit.</th>
+                        <!--<th class="precio">Unit.</th>-->
                     </tr>
                 </thead>
                 @foreach($cart->details as $detail)
@@ -32,12 +32,12 @@
                         <td class="codigo">{{ $detail->producto->codigo }}</td>
                         <td class="cantidad">{{ $detail->quantity }}</td>
                         <td class="observacion">{{ $detail->observacion }}</td>
-                        <td class="precio">$ {{ $detail->producto->precio }}</td>
+                        <!--<td class="precio">$ {{ $detail->producto->precio }}</td>-->
                     </tr>
                 </tbody>
                 @endforeach
                 <td></td>
-                
+
                 <td class="precio">Total</td>
                 <td class="observacion">$ {{ $cart->total }}</td>
             </table>
