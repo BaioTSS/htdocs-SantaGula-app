@@ -17,6 +17,9 @@ class CreateCajasTable extends Migration
             $table->increments('id');
             $table->string('dia');
             $table->float('total');
+            $table->float('p1_tot');
+            $table->float('p2_tot');
+            $table->float('p3_tot');
             $table->timestamps();
         });
     }

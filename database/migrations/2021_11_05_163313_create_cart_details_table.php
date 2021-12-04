@@ -18,7 +18,7 @@ class CreateCartDetailsTable extends Migration
 
             $table->integer('cart_id')->unsigned();
             $table->integer('producto_id')->unsigned();
-
+            $table->integer('cupon')->default(false);
             $table->longText('observacion')->nullable();
 
             //clave foranea a header
