@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Session;
 use Illuminate\Http\Request;
 use App\Models\CartDetail;
 use App\Models\Cart;
@@ -29,17 +29,13 @@ class CartDetailController extends Controller
     public function destroy(Request $request)
     {
         $cartDetail = CartDetail::find($request->cart_detail_id);
+        $cartDetail->delete();
+        //if ($cartDetail->cart_id == auth()->user()->cart->id) {
+          //  $cartDetail->delete();
+        //}
 
-
-        if ($cartDetail->cart_id == auth()->user()->cart->id) {
-            //$cart = $cartDetail->cart;
-            //$cart->total -= $cartDetail->quantity * $cartDetail->producto->precio;
-            //auth()->user()->cart->total -= $cartDetail->quantity * $cartDetail->producto->precio;
-
-            $cartDetail->delete();
-        }
         $notificacion = 'El plato se ha eliminado correctamente de la lista de pedidos';
-        return back()->with(compact('notificacion'));
+        return redirect('/home')->with(compact('notificacion'));
     }
 
 }
