@@ -29,8 +29,8 @@ class CartController extends Controller
           $notificacion = 'Tu pedido no presenta platos';
         }elseif ($request->deliveryBtn == "Enable" and empty($request->direccion)) {
           $notificacion = 'Indique su domicilio';
-        }elseif (empty($turnos)){
-          $notificacion = 'No hay disponibilidad';
+        }elseif ($request->input('horario') == 'false'){
+          $notificacion = 'Sin disponibilidad horaria';
         }else{
           $hora = Hora::where('horarios', '=', $request->input('horario'))->first();
           $hora->cupos -= 1;
@@ -38,7 +38,6 @@ class CartController extends Controller
           $hora->save();
           $notificacion = 'Tu pedido se ha enviado correctamente';
         }
-
 
         return back()->with(compact('notificacion'));
     }

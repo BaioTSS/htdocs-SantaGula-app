@@ -119,6 +119,7 @@
 
 
     <div class="section section-landing">
+      @if (Auth::guest())
       <div class="container">
         <div class="row" style="display: flex;">
           <div class="col-sm-8 col-sm-offset-2">
@@ -134,6 +135,8 @@
           </div>
         </div>
       </div>
+      @endif
+
       <!--<div class="features">
         <div class="row">
           <div class="col-md-4">

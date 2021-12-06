@@ -13,8 +13,8 @@ table {
 
 td.observacion,
 th.observacion {
-    width: 75px;
-    max-width: 75px;
+    width: 105px;
+    max-width: 105px;
     text-align: center;
     align-content: center;
     word-break: break-all;
@@ -22,8 +22,8 @@ th.observacion {
 }
 td.codigo,
 th.codigo {
-    width: 35px;
-    max-width: 35px;
+    width: 45px;
+    max-width: 45px;
     text-align: center;
     align-content: center;
     word-break: break-all;
@@ -31,8 +31,8 @@ th.codigo {
 
 td.cantidad,
 th.cantidad {
-    width: 35px;
-    max-width: 35px;
+    width: 45px;
+    max-width: 45px;
     text-align: center;
     align-content: center;
     word-break: break-all;

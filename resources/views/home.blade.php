@@ -11,10 +11,16 @@
     <div class="section" style="padding-bottom: 10px;padding-top: 10px;">
       <h3 class="title text-center">Mis Pedidos</h3>
 
-      @if (session('notificacion'))
+      @if(session('notificacion'))
+        @if(strcmp (session('notificacion'), 'Tu pedido se ha enviado correctamente' ) == 0) 
           <div class="alert alert-success" role="alert">
               {{ session('notificacion') }}
           </div>
+        @else
+          <div class="alert alert-danger" role="alert">
+              {{ session('notificacion') }}
+          </div>
+        @endif
       @endif
 
       <ul class="nav nav-tabs" style="background: #008c45;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
@@ -126,7 +132,7 @@
                             <option value="{{ $turno->horarios }}">{{ $turno->horarios }}</option>
                           @endforeach
                           @if(empty($turno))
-                            <option value="#">No disponible</option>
+                            <option value="false">No disponible</option>
                           @endif
                         </select>
                       </div>

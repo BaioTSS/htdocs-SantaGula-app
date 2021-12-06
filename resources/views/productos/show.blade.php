@@ -21,19 +21,20 @@
                       @endif
                       <div class="name">
                           <h3 class="title" style="margin-bottom: 3px;margin-top: 15px;">{{ $plato->nombre }}</h3>
-                          <p>Categoria {{ $plato->categoria_nombre }}</p>
+                          <!--<p>Categoria {{ $plato->categoria_nombre }}</p>-->
                       </div>
                   </div>
               </div>
               <div class="description text-center" style="margin-top: 0px;">
-                    <p>{{ $plato->descripcion }}</p>
+                    <small><h5>{{ $plato->descripcion }}</h5></small>
+                    <h5>${{ $plato->precio }}</h5>
               </div>
 
               <div class="text-center">
                 <!-- Button trigger modal -->
                 @guest
   							@if (Route::has('login'))
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-danger" role="alert">
                     Para realizar un pedido es necesario iniciar session
                 </div>
   					    <li style="list-style: none;">
@@ -47,7 +48,7 @@
                   <i class="material-icons">add</i> Añadir al pedido
                 </button>
                 <div class="btn-group btn-group-justified" role="group" aria-label="Basic mixed styles example">
-                  <a class="btn btn-primary btn-round btn" href="{{ url('categorias/'.$plato->categoria->id) }}" style="color: #f4f5f0;background-color: #008c45;">
+                  <a class="btn btn-primary btn-round" href="{{ url('categorias/'.$plato->categoria->id) }}" style="color: #f4f5f0;background-color: #008c45;">
                     <i class="material-icons">reply</i> {{ $plato->categoria_nombre }}
                   </a>
                   <a class="btn btn-primary btn-round" href="{{ url('/home') }}" style="color: #f4f5f0;background-color: #008c45;">
