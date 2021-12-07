@@ -123,7 +123,7 @@
       <div class="container">
         <div class="row" style="display: flex;">
           <div class="col-sm-8 col-sm-offset-2">
-            <div class="card" style="background-color: #ffc063;">
+            <div class="card" style="background-color: #f4f5f0;">
               <h3 class="card-title text-center" style="color: #008c45;background-color: #f4f5f0;margin-top: 0px;margin-bottom: 0px;">Servicio de Food Truck</h3>
               <div id="myCarousel" class="carousel slide" data-ride="carousel">
                   <!-- Indicators -->
@@ -157,7 +157,7 @@
                   </a>
               </div>
               <div class="card-body">
-                <div class="alert alert-success" role="alert" style="background-color: #f4f5f0;border-radius: 5px;">
+                <div class="alert alert-light" role="alert" style="border-radius: 5px;">
 
                   <p style="color: #008c45;">
                     Contamos con una amplia trayectoria en servicios gastronomicos : bodas, fiestas de 15, cumpleaños, aniversarios y todo tipo de eventos sociales.
@@ -171,7 +171,7 @@
                   <p class="mb-0" style="color: #008c45;">Contactanos, degusta y planea un evento inolvidable!</p>
                 </div>
                 <div class="text-right">
-                  <a class="btn" href="https://wa.me/5493404508282" style="color: #008c45;background-color: #f4f5f0;">
+                  <a class="btn" href="https://wa.me/5493404508282" style="color: #f4f5f0;background-color: #008c45;">
                       Contactar
                   </a>
                 </div>
