@@ -119,6 +119,69 @@
 
 
     <div class="section section-landing">
+
+      <div class="container">
+        <div class="row" style="display: flex;">
+          <div class="col-sm-8 col-sm-offset-2">
+            <div class="card" style="background-color: #ffc063;">
+              <h3 class="card-title text-center" style="color: #008c45;background-color: #f4f5f0;margin-top: 0px;margin-bottom: 0px;">Servicio de Food Truck</h3>
+              <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel" data-slide-to="1"></li>
+                      <li data-target="#myCarousel" data-slide-to="2"></li>
+                  </ol>
+
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                      <div class="item active">
+                          <img src="/imagenes/publicidad/ft1.jpeg" alt="">
+                      </div>
+                      <div class="item">
+                          <img src="/imagenes/publicidad/ft2.jpeg" alt="">
+                      </div>
+                      <div class="item">
+                          <img src="/imagenes/publicidad/ft3.jpeg" alt="">
+                      </div>
+                  </div>
+
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left"></span>
+                      <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right"></span>
+                      <span class="sr-only">Next</span>
+                  </a>
+              </div>
+              <div class="card-body">
+                <div class="alert alert-success" role="alert" style="background-color: #f4f5f0;border-radius: 5px;">
+
+                  <p style="color: #008c45;">
+                    Contamos con una amplia trayectoria en servicios gastronomicos : bodas, fiestas de 15, cumpleaños, aniversarios y todo tipo de eventos sociales.
+                     Armamos el menú de tu evento a medida para ambientarlo de la mejor manera.
+                  </p>
+
+                  <p class="mb-0" style="color: #008c45;">
+                    Contamos con gran variedad de platos:
+                    Hamburguesas, lomitos, bondiolas, pizzas y sushi de excelente calidad.
+                  </p>
+                  <p class="mb-0" style="color: #008c45;">Contactanos, degusta y planea un evento inolvidable!</p>
+                </div>
+                <div class="text-right">
+                  <a class="btn" href="https://wa.me/5493404508282" style="color: #008c45;background-color: #f4f5f0;">
+                      Contactar
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       @if (Auth::guest())
       <div class="container">
         <div class="row" style="display: flex;">
