@@ -11,7 +11,7 @@
   <div class="container">
       <div class="section text-center" style="padding-top: 0px;">
         <h2 class="title">Configuraciones</h2>
-        <ul class="nav nav-tabs" style="background: #008c45;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
+        <ul class="nav nav-tabs" style="background: #019345;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" href="{{ url('/admin/gestion/ventas') }}">
               <span class="material-icons">attach_money</span>
@@ -54,7 +54,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-4">
-              <div class="alert alert-danger" style="background: #cd212a;border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;">
+              <div class="alert alert-danger" style="background: #CF2734;border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;">
                 <h3>Horarios</h3>
                 <table class="table-flex">
                     <thead>
@@ -76,7 +76,7 @@
                           </div>
                         </td>
                         <td class="text-center">
-                          <button class="btn btn-primary btn-round" type="submit" name="turno_id" value="{{ $turno->id }}" style="background: #008c45;">
+                          <button class="btn btn-primary btn-round" type="submit" name="turno_id" value="{{ $turno->id }}" style="background: #019345;">
                           	<i class="material-icons">published_with_changes</i>
                           </button>
                         </form>

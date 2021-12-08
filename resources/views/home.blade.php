@@ -12,7 +12,7 @@
       <h3 class="title text-center">Mis Pedidos</h3>
 
       @if(session('notificacion'))
-        @if(strcmp (session('notificacion'), 'Tu pedido se ha enviado correctamente' ) == 0) 
+        @if(strcmp (session('notificacion'), 'Tu pedido se ha enviado correctamente' ) == 0)
           <div class="alert alert-success" role="alert">
               {{ session('notificacion') }}
           </div>
@@ -23,7 +23,7 @@
         @endif
       @endif
 
-      <ul class="nav nav-tabs" style="background: #008c45;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
+      <ul class="nav nav-tabs" style="background: #019345;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
         <li class="nav-item active">
           <a class="nav-link" data-bs-toggle="tab" href="{{ url('/home') }}">
             <span class="material-icons">add_shopping_cart</span>
@@ -199,7 +199,7 @@
 
 
               <div class="col-sm-12" style="justify-content: center;">
-                <button class="btn btn-primary btn-round" style="background-color: #008c45;">
+                <button class="btn btn-primary btn-round" style="background-color: #019345;">
                   <i class="material-icons">done</i> Confirmar pedido
                 </button>
               </div>

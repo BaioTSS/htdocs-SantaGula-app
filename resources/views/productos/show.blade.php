@@ -38,20 +38,20 @@
                     Para realizar un pedido es necesario iniciar session
                 </div>
   					    <li style="list-style: none;">
-                  <a class="btn btn-primary btn-round nav-link" href="{{ route('login') }}" style="color: #f4f5f0;background-color: #008c45;">
+                  <a class="btn btn-primary btn-round nav-link" href="{{ route('login') }}" style="color: #FFFEFE;background-color: #019345;">
                     <i class="material-icons">login</i> Iniciar session
                   </a>
   					    </li>
                 @endif
                 @else
-                <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddToCart" style="color: #f4f5f0;background-color: #008c45;">
+                <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddToCart" style="color: #FFFEFE;background-color: #019345;">
                   <i class="material-icons">add</i> Añadir al pedido
                 </button>
                 <div class="btn-group btn-group-justified" role="group" aria-label="Basic mixed styles example">
-                  <a class="btn btn-primary btn-round" href="{{ url('categorias/'.$plato->categoria->id) }}" style="color: #f4f5f0;background-color: #008c45;">
+                  <a class="btn btn-primary btn-round" href="{{ url('categorias/'.$plato->categoria->id) }}" style="color: #FFFEFE;background-color: #019345;">
                     <i class="material-icons">reply</i> {{ $plato->categoria_nombre }}
                   </a>
-                  <a class="btn btn-primary btn-round" href="{{ url('/home') }}" style="color: #f4f5f0;background-color: #008c45;">
+                  <a class="btn btn-primary btn-round" href="{{ url('/home') }}" style="color: #FFFEFE;background-color: #019345;">
                     <i class="material-icons">shopping_bag</i> Mis pedidos
                   </a>
                 </div>

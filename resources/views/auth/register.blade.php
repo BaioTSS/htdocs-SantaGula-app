@@ -10,7 +10,7 @@
 						<div class="card card-signup">
 							<form method="POST" action="{{ route('register') }}">
                 @csrf
-								<div class="header header-primary text-center" style="background: #008c45;">
+								<div class="header header-primary text-center" style="background: #019345;">
 									<h4>Registro de usuarios</h4>
 
 								</div>

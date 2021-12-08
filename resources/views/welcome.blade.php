@@ -64,18 +64,28 @@
 @endsection
 
 @section('content')
+
+<!--
+Verde  019345 008c45
+Blanco FFFEFE f4f5f0
+Rojo   CF2734 cd212a
+
+Negro   041F1E
+Naranja D68C45
+-->
+
 <div class="header header-filter" style="background-image: url('{{ asset('/imagenes/fondos/banner2.png') }}');">
   <div class="container">
     <div class="row" style="margin-top: -100px;">
       <div class="col-md-6">
-        <h1 class="title">SantaGula</h1>
+        <h1 class="title">Santa Gula</h1>
         <h3>El placer de encontrar la diferencia</h3>
       </div>
     </div>
   </div>
 </div>
 
-<div class="main main-raised" style="margin-top: -300px;">
+<div class="main main-raised" style="margin-top: -300px;background-color: #FFFEFE">
   <div>
 
     <div class="section text-center" style="padding-bottom: 10px;padding-top: 10px;">
@@ -88,7 +98,7 @@
         <div class="form-group mx-sm-3 mb-2" style="margin-top: 13px;padding-right: 7px;">
           <input class="form-control" type="text" placeholder="¿Qué te gustaria cenar hoy?" name="query" id="search">
         </div>
-        <button class="btn btn-primary btn-just-icon" type="submit" aria-haspopup="true" aria-expanded="false" style="background-color: #008c45;">
+        <button class="btn btn-primary btn-just-icon" type="submit" aria-haspopup="true" aria-expanded="false" style="background-color: #019345;">
             <i class="material-icons">search</i>
         </button>
       </form>
@@ -123,8 +133,10 @@
       <div class="container">
         <div class="row" style="display: flex;">
           <div class="col-sm-8 col-sm-offset-2">
-            <div class="card" style="background-color: #f4f5f0;">
-              <h3 class="card-title text-center" style="color: #008c45;background-color: #f4f5f0;margin-top: 0px;margin-bottom: 0px;">Servicio de Food Truck</h3>
+            <div class="card" style="background-color: #041F1E;">
+              <h3 class="card-title text-center" style="color: #ffc735;background-color: #041F1E;margin-top: 4px;margin-bottom: 2px;">
+                Servicio de Food Truck
+              </h3>
               <div id="myCarousel" class="carousel slide" data-ride="carousel">
                   <!-- Indicators -->
                   <ol class="carousel-indicators">
@@ -157,21 +169,21 @@
                   </a>
               </div>
               <div class="card-body">
-                <div class="alert alert-light" role="alert" style="border-radius: 5px;">
+                <div class="alert" role="alert" style="border-radius: 5px;background-color: #82816D;"> <!-- A18276 8A817C -->
 
-                  <p style="color: #008c45;">
+                  <p style="color: #ffc735;">
                     Contamos con una amplia trayectoria en servicios gastronomicos : bodas, fiestas de 15, cumpleaños, aniversarios y todo tipo de eventos sociales.
                      Armamos el menú de tu evento a medida para ambientarlo de la mejor manera.
                   </p>
 
-                  <p class="mb-0" style="color: #008c45;">
+                  <p class="mb-0" style="color: #ffc735;">
                     Contamos con gran variedad de platos:
                     Hamburguesas, lomitos, bondiolas, pizzas y sushi de excelente calidad.
                   </p>
-                  <p class="mb-0" style="color: #008c45;">Contactanos, degusta y planea un evento inolvidable!</p>
+                  <p class="mb-0" style="color: #ffc735;">Contactanos, degusta y planea un evento inolvidable!</p>
                 </div>
-                <div class="text-right">
-                  <a class="btn" href="https://wa.me/5493404508282" style="color: #f4f5f0;background-color: #008c45;">
+                <div class="text-right" style="margin-top: 0px;margin-bottom: 0px;">
+                  <a class="btn" href="https://wa.me/5493404508282" style="color: #ffc735;background-color: #82816D;margin-top: 0px;margin-bottom: 0px;">
                       Contactar
                   </a>
                 </div>
@@ -188,10 +200,10 @@
           <div class="col-sm-8 col-sm-offset-2">
             <h3 class="title text-center">¿Todavía no te registraste?</h3>
             <div class="btn-group btn-group-justified" role="group" aria-label="Basic mixed styles example">
-              <a class="btn btn-primary btn-round btn" href="{{ route('login') }}" style="color: #f4f5f0;background-color: #008c45;">
+              <a class="btn btn-primary btn-round btn" href="{{ route('login') }}" style="color: #FFFEFE;background-color: #019345;">
                 <i class="material-icons">login</i> Iniciar Sesion
               </a>
-              <a class="btn btn-primary btn-round btn" href="{{ route('register') }}" style="color: #f4f5f0;background-color: #008c45;">
+              <a class="btn btn-primary btn-round btn" href="{{ route('register') }}" style="color: #FFFEFE;background-color: #019345;">
                 <i class="material-icons">app_registration</i> Registrarme
               </a>
             </div>

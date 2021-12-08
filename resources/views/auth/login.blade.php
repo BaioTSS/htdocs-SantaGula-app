@@ -10,7 +10,7 @@
 						<div class="card card-signup">
 							<form class="form" method="POST" action="{{ route('login') }}">
                 @csrf
-								<div class="header header-primary text-center" style="background: #008c45;">
+								<div class="header header-primary text-center" style="background: #019345;">
 									<h4>Inicio de Sesión</h4>
 								</div>
 
@@ -51,18 +51,18 @@
 
 								</div>
 								<div class="text-center" style="margin-top: 10px;margin-bottom: 10px;">
-									<a href="{{ route('register') }}" style="color: #008c45;">
+									<a href="{{ route('register') }}" style="color: #019345;">
 	                    {{ __('Registrarme') }}
 	                </a>
 								</div>
 								<div class="text-center" style="margin-bottom: 10px;">
-									<a href="{{ route('password.request') }}" style="color: #008c45;">
+									<a href="{{ route('password.request') }}" style="color: #019345;">
 	                    {{ __('¿Olvidaste tu contraseña?') }}
 	                </a>
 								</div>
 
 								<div class="footer text-center">
-									<button type="submit" class="btn btn-simple btn-primary btn-lg" style="color: #f4f5f0;background-color: #008c45;">
+									<button type="submit" class="btn btn-simple btn-primary btn-lg" style="color: #FFFEFE;background-color: #019345;">
 										Iniciar sesión
 									</button>
 								</div>

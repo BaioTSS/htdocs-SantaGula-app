@@ -11,7 +11,7 @@
   <div class="container">
       <div class="section text-center" style="padding-top: 0px;">
         <h2 class="title">Listado de pedidos para delivery</h2>
-        <ul class="nav nav-tabs" style="background: #008c45;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
+        <ul class="nav nav-tabs" style="background: #019345;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" href="{{ url('/admin/gestion/ventas') }}">
               <span class="material-icons">attach_money</span>
@@ -57,7 +57,7 @@
             @foreach($carritos as $cart)
             @if($cart->status == "en camino")
             <div class="col-sm-12">
-              <div class="alert alert-danger" style="background: #cd212a;border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;">
+              <div class="alert alert-danger" style="background: #CF2734;border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;">
                 <div class="container-fluid">
 
                     <div class="col-sm-8">
@@ -85,10 +85,10 @@
                       <form method="post" action="{{ url('/admin/gestion/delivery') }}">
                         <!-- Button trigger modal -->
                         @csrf
-                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#detallesPedido{{ $cart->id }}" style="background: #008c45;">
+                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#detallesPedido{{ $cart->id }}" style="background: #019345;">
                           <i class="material-icons">visibility</i>  Ver pedido
                         </button>
-                        <button class="btn btn-primary" type="submit" name="cart_id" value="{{ $cart->id }}" style="background: #008c45;">
+                        <button class="btn btn-primary" type="submit" name="cart_id" value="{{ $cart->id }}" style="background: #019345;">
                           <i class="material-icons">paid</i>  Entregado
                         </button>
                       </form>

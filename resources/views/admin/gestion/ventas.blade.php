@@ -11,7 +11,7 @@
   <div class="container">
       <div class="section text-center" style="padding-top: 0px;">
         <h2 class="title">Panel de ventas</h2>
-        <ul class="nav nav-tabs" style="background: #008c45;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
+        <ul class="nav nav-tabs" style="background: #019345;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
           <li class="nav-item active">
             <a class="nav-link" data-bs-toggle="tab" href="{{ url('/admin/gestion/ventas') }}">
               <span class="material-icons">attach_money</span>
@@ -64,17 +64,17 @@
                     <input type="text" name="fecha" placeholder="dia/mes/año" value="">
                   </div>
                   <div class="col-sm-4 text-left">
-                    <button class="btn btn-primary" type="submit" style="background: #008c45;">
+                    <button class="btn btn-primary" type="submit" style="background: #019345;">
                       <i class="material-icons">autorenew</i> Abrir nueva caja
                     </button>
               </form>
-                    <a href="{{ url('/admin/gestion/pdf') }}" class="btn btn-danger btn-sm" target="_blank" style="background: #008c45;">Generar PDF</a>
+                    <a href="{{ url('/admin/gestion/pdf') }}" class="btn btn-danger btn-sm" target="_blank" style="background: #019345;">Generar PDF</a>
                   </div>
 
             </div>
 
             <div class="col-sm-4 text-center">
-              <div class="alert alert-danger" style="background: #008c45;border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;">
+              <div class="alert alert-danger" style="background: #019345;border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;">
                 <h4>Total caja</h4>
                 <h5>$ {{ $ultimaCaja->total }}</h5>
               </div>
@@ -109,18 +109,18 @@
             <div class="col-md-6">
               <div class="row">
                 <div class="col-md-12">
-                  <div class="alert alert-danger" style="background: #008c45;border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;">
+                  <div class="alert alert-danger" style="background: #019345;border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;">
                     <h4>Cantidad de pedidos entregados: {{ $cartsEntregados }}</h4>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="alert alert-danger" style="background: #008c45;border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;">
+                  <div class="alert alert-danger" style="background: #019345;border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;">
                     <h4>Pedidos con delivery</h4>
                     <p>{{ $cartsEntrDelivery }}</p>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="alert alert-danger" style="background: #008c45;border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;">
+                  <div class="alert alert-danger" style="background: #019345;border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;">
                     <h4>Pedidos por takeaway</h4>
                     <p>{{ $cartsEntrTakeaway }}</p>
                   </div>

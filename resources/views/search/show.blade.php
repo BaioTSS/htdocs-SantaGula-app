@@ -30,7 +30,6 @@
 @section('content')
 
 <div class="header header-filter" style="background-image: url('{{ asset('/imagenes/fondos/banner2.png') }}');"></div>
-
 <div class="main main-raised">
   <div class="profile-content">
           <div class="container">
@@ -49,16 +48,13 @@
                       @endif
                   </div>
 
-              <div class="description text-center">
+              <div class="description text-center" style="margin-top: 0px;">
                   <p>Se encontraron {{ $productos->count() }} resultados para el término {{ $query }}</p>
-                  <a class="btn btn-primary btn-round btn" href="{{ url('/') }}" style="color: #f4f5f0;background-color: #008c45;">
-                    <i class="material-icons">reply</i> Volver
-                  </a>
               </div>
 
-              <div class="team text-center" style="margin-top: 0px;">
+              <div class="team text-center" style="margin-top: 0px;padding-bottom: 0px;">
                 <div class="container">
-                  <div class="row" style="justify-content: center;">
+                  <!-- <div class="row" style="justify-content: center;">
                     @foreach ($productos as $producto)
                     <div class="col-md-4">
                       <div class="team-player" style="margin-top: 20px;">
@@ -72,11 +68,31 @@
                       </div>
                     </div>
                     @endforeach
+                  </div> -->
+                  <div class="row" style="justify-content: center;">
+                    @foreach ($productos as $producto)
+                    <div class="col-md-6 col-xs-12">
+                      <div class="card" style="width: 100%;border-radius: 10px;background-color: #019345;margin-top: 20px;">
+                        <a href="{{ url('platos/'.$producto->id) }}" style="text-decoration:none;">
+                            <h4 class="title" style="margin-bottom: 5px;margin-top: 10px;">
+                              {{ $producto->nombre }}
+                            </h4>
+                            <p class="description" style="color: #FFFEFE;margin-bottom: 10px;margin-top: 5px;">{{ $producto->descripcion }}</p>
+                        </a>
+                      </div>
+                    </div>
+                    @endforeach
                   </div>
                 </div>
-                <div class="text-center mt-10" style="padding-top: 20px;">
+                <!--<div class="text-center mt-10" style="padding-top: 20px;">
                     {{ $productos->links() }}
-                </div>
+                </div>-->
+              </div>
+
+              <div class="text-center" style="margin-bottom: 10px;margin-top: 10px;">
+                <a class="btn btn-primary btn-round btn" href="{{ url('/') }}" style="color: #FFFEFE;background-color: #019345;">
+                  <i class="material-icons">reply</i> Volver
+                </a>
               </div>
 
           </div>

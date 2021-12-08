@@ -57,19 +57,19 @@
                 <div class="row" style="justify-content: center;">
                   @foreach ($productos as $producto)
                   <div class="col-md-6 col-xs-12">
-                    <div class="card" style="width: 100%;border-radius: 10px;background-color: #008c45;margin-top: 20px;">
+                    <div class="card" style="width: 100%;border-radius: 10px;background-color: #019345;margin-top: 20px;">
                       <a href="{{ url('platos/'.$producto->id) }}" style="text-decoration:none;">
                           <h4 class="title" style="margin-bottom: 5px;margin-top: 10px;">
                             {{ $producto->nombre }}
                           </h4>
-                          <p class="description" style="color: #f4f5f0;margin-bottom: 10px;margin-top: 5px;">{{ $producto->descripcion }}</p>
+                          <p class="description" style="color: #FFFEFE;margin-bottom: 10px;margin-top: 5px;">{{ $producto->descripcion }}</p>
                       </a>
                     </div>
                   </div>
                   @endforeach
                 </div>
                 <div class="text-center">
-                  <a class="btn btn-primary btn-round btn" href="{{ url('/') }}" style="color: #f4f5f0;background-color: #008c45;margin-top: 20px;">
+                  <a class="btn btn-primary btn-round btn" href="{{ url('/') }}" style="color: #FFFEFE;background-color: #019345;margin-top: 20px;">
                     <i class="material-icons">reply</i> Volver
                   </a>
                 </div>

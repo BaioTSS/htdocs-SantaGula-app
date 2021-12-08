@@ -1,5 +1,5 @@
 
-<ul class="nav nav-tabs" style="background: #000000;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
+<ul class="nav nav-tabs" style="background: #041F1E;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
   <li class="nav-item">
     <a class="nav-link" data-bs-toggle="tab" href="{{ url('/admin/pedidos') }}">
       <span class="material-icons">event_note</span>
