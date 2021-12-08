@@ -11,9 +11,9 @@
           <div class="container">
               <div class="row">
                   <div class="profile">
-                      <div class="avatar">
+                      <!--<div class="avatar">
                           <img src="{{ $plato->featured_imagen_url }}" alt="Circle Image" class="img-circle img-responsive img-raised">
-                      </div>
+                      </div>-->
                       @if (session('notificacion'))
                           <div class="alert alert-success" role="alert" style="margin-top: 15px;">
                               {{ session('notificacion') }}
@@ -58,7 +58,7 @@
                 @endif
               </div>
 
-              <div class="row">
+            <!--<div class="row">
                 <div class="col-md-6 col-md-offset-3">
                   <div class="profile-tabs">
                     <div class="nav-align-center">
@@ -82,7 +82,7 @@
                     </div>
                   </div>
                   <!-- End Profile Tabs -->
-                </div>
+                </div>-->
               </div>
 
           </div>
