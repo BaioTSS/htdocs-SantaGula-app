@@ -68,6 +68,9 @@
                   </div>
                   @endforeach
                 </div>
+                <div class="text-center mt-10" style="padding-top: 20px;">
+                    {{ $productos->links() }}
+                </div>
                 <div class="text-center">
                   <a class="btn btn-primary btn-round btn" href="{{ url('/') }}" style="color: #FFFEFE;background-color: #019345;margin-top: 20px;">
                     <i class="material-icons">reply</i> Volver

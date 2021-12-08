@@ -84,9 +84,9 @@
                     @endforeach
                   </div>
                 </div>
-                <!--<div class="text-center mt-10" style="padding-top: 20px;">
+                <div class="text-center mt-10" style="padding-top: 20px;">
                     {{ $productos->links() }}
-                </div>-->
+                </div>
               </div>
 
               <div class="text-center" style="margin-bottom: 10px;margin-top: 10px;">

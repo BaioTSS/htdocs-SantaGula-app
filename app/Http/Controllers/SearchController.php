@@ -10,7 +10,7 @@ class SearchController extends Controller
     public function show(Request $request)
     {
         $query = $request->input('query');
-        $productos = Productos::where('nombre', 'like', "%$query%")->paginate(5);
+        $productos = Productos::where('nombre', 'like', "%$query%")->paginate(10);
 
         if ($productos->count() == 1) {
           $id =$productos->first()->id;
