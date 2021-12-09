@@ -50,7 +50,7 @@
         <thead>
             <tr>
 
-                <th class="text-center"></th>
+                <!--<th class="text-center"></th> IMAGEN-->
                 <th class="col-md-2 text-left">Plato</th>
                 <th class="col-md-2 text-left">Observaciones</th>
                 <th class="text-center">Precio</th>
@@ -62,9 +62,9 @@
         <tbody>
           @foreach(auth()->user()->cart->details as $detail)
           <tr>
-              <td class="text-center">
+            <!--  <td class="text-center">
                   <img src="{{ $detail->producto->featured_imagen_url }}" height="50" alt="No posee imagen">
-              </td>
+              </td>  IMAGEN-->
               <td class="col-md-2 text-left" style="vertical-align: middle;">
                 <a href="{{ url('/platos/'.$detail->producto->id) }}" target="_blank">
                   {{ $detail->producto->nombre }}
