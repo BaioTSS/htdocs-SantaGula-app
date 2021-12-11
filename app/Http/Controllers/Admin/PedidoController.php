@@ -153,6 +153,9 @@ class PedidoController extends Controller
         $nuevaCaja = new Caja();
         $nuevaCaja->dia = $request->input('fecha');
         $nuevaCaja->total = 0;
+        $nuevaCaja->p1_tot = 0;
+        $nuevaCaja->p2_tot = 0;
+        $nuevaCaja->p3_tot = 0;
         $nuevaCaja->save();
         return back();
       }elseif($menu == "config") {
