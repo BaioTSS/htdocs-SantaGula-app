@@ -88,7 +88,7 @@
                   <div class="container-fluid">
                     @if($cart->entrega_tipo == "delivery")
                       <div class="form-floating">
-                        <p>Entrega tipo delivery por calle {{ $cart->direccion }} a las {{ $cart->horario }}Hs.</p>
+                        <p>Entrega tipo delivery por calle {{ $cart->direccion }} a las {{ $cart->horario }} hs.</p>
                       </div>
                     @elseif($cart->entrega_tipo == "takeaway")
                       <p>Retiro en SantaGula a las {{ $cart->horario }} hs.</p>
