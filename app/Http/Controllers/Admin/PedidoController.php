@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use App\Models\CartDetail;
 use App\Models\Caja;
 use App\Models\Ventas;
 use App\Models\Hora;
@@ -85,7 +86,14 @@ class PedidoController extends Controller
         $cart->status = "entregado";
         $ultimaCaja = Caja::orderBy('id', 'desc')->first();
         $ultimaCaja->total += $cart->total;
-        $ultimoProdSell = Ventas::orderBy('id', 'desc')->first();
+        if ($request->input('medioDePago') == "p1_tot") {
+          $ultimaCaja->p1_tot += $cart->total;
+        }elseif ($request->input('medioDePago') == "p2_tot") {
+          $ultimaCaja->p2_tot += $cart->total;
+        }elseif ($request->input('medioDePago') == "p3_tot") {
+          $ultimaCaja->p3_tot += $cart->total;
+        }
+        //$ultimoProdSell = Ventas::orderBy('id', 'desc')->first();
         //funcion para desglosar cantidad de productos por venta y sumatoria a ultima caja
         foreach ($cart->details as $detail) {
           if (Ventas::where('producto_code', '=', $detail->producto->codigo)->exists()){
@@ -119,6 +127,13 @@ class PedidoController extends Controller
         $cart->status = "entregado";
         $ultimaCaja = Caja::orderBy('id', 'desc')->first();
         $ultimaCaja->total += $cart->total;
+        if ($request->input('medioDePago') == "p1_tot") {
+          $ultimaCaja->p1_tot += $cart->total;
+        }elseif ($request->input('medioDePago') == "p2_tot") {
+          $ultimaCaja->p2_tot += $cart->total;
+        }elseif ($request->input('medioDePago') == "p3_tot") {
+          $ultimaCaja->p3_tot += $cart->total;
+        }
         //funcion para desglosar cantidad de productos por venta y sumatoria a ultima caja
         foreach ($cart->details as $detail) {
           if (Ventas::where('producto_code', '=', $detail->producto->codigo)->exists()){
@@ -148,16 +163,6 @@ class PedidoController extends Controller
         return back();
 
 
-      }elseif($menu == "ventas") {
-
-        $nuevaCaja = new Caja();
-        $nuevaCaja->dia = $request->input('fecha');
-        $nuevaCaja->total = 0;
-        $nuevaCaja->p1_tot = 0;
-        $nuevaCaja->p2_tot = 0;
-        $nuevaCaja->p3_tot = 0;
-        $nuevaCaja->save();
-        return back();
       }elseif($menu == "config") {
 
         $turno = Hora::find($request->input('turno_id'));
@@ -187,10 +192,32 @@ class PedidoController extends Controller
 
   public function destroy($id)
   {
-      ///Eliminación de producto
-      $productos = Categorias::find($id); //aca buscamos al producto
-      $productos->delete(); //DELETE
+      ///Eliminación de carritos
+      $CartDetails = CartDetail::where('cart_id',$id)->delete(); //aca buscamos los detalles del cart y los eliminamos
+      $Cart = Cart::find($id);
+      $Cart->delete();
+      return back();
+  }
 
-      return redirect('/admin/categorias');
+  public function destroyCarts(Request $request)
+  {
+      ///Eliminación de carritos al actualizar caja
+      $CartDetails = CartDetail::get();
+      foreach ($CartDetails as $CartDetail) {
+        $CartDetail->delete();
+      }
+      $Carts = Cart::get();
+      foreach ($Carts as $Cart) {
+        $Cart->delete();
+      }
+
+      $nuevaCaja = new Caja();
+      $nuevaCaja->dia = $request->input('fecha');
+      $nuevaCaja->total = 0;
+      $nuevaCaja->p1_tot = 0;
+      $nuevaCaja->p2_tot = 0;
+      $nuevaCaja->p3_tot = 0;
+      $nuevaCaja->save();
+      return back();
   }
 }

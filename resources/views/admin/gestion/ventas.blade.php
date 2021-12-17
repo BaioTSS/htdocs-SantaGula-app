@@ -53,9 +53,10 @@
         <div class="team">
           <div class="row">
             <div class="col-sm-8 text-left">
-              <form method="post" action="{{ url('/admin/gestion/ventas') }}">
+              <!-- <form method="post" action="{{ url('/admin/gestion/ventas') }}"> -->
+              <form method="post" action="{{ url('/admin/gestion/newCaja') }}">
                 @csrf
-
+                {{ method_field('DELETE') }}
                   <div class="col-sm-4 text-left">
                     <p>Caja actual: {{ $ultimaCaja->dia }}</h>
                   </div>
@@ -67,16 +68,27 @@
                     <button class="btn btn-primary" type="submit" style="background: #019345;">
                       <i class="material-icons">autorenew</i> Abrir nueva caja
                     </button>
-              </form>
                     <a href="{{ url('/admin/gestion/pdf') }}" class="btn btn-danger btn-sm" target="_blank" style="background: #019345;">Generar PDF</a>
                   </div>
-
+                </form>
             </div>
 
             <div class="col-sm-4 text-center">
-              <div class="alert alert-danger" style="background: #019345;border-radius: 10px;padding-right: 10px;padding-left: 10px;margin-left: 10px;margin-right: 10px;">
-                <h4>Total caja</h4>
-                <h5>$ {{ $ultimaCaja->total }}</h5>
+              <div class="row" style="color: #FFFEFE;background: #019345;
+              border-radius: 10px;padding-right: 10px;
+              padding-left: 10px;margin-left: 10px;margin-right: 10px;
+              display: flex;align-items: center;">
+
+                  <div class="col-sm-5">
+                    <h4><strong>Total caja</strong></h4>
+                    <h5><strong>$ {{ $ultimaCaja->total }}</strong></h5>
+                  </div>
+                  <div class="col-sm-7 text-left">
+                    <h6>Efectivo $ {{ $ultimaCaja->p1_tot }}</h6>
+                    <h6>PlusCobros $ {{ $ultimaCaja->p2_tot }}</h6>
+                    <h6>Devito $ {{ $ultimaCaja->p3_tot }}</h6>
+                  </div>
+
               </div>
             </div>
 

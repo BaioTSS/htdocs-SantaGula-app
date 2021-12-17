@@ -85,12 +85,25 @@
                       <form method="post" action="{{ url('/admin/gestion/takeaway') }}">
                         <!-- Button trigger modal -->
                         @csrf
-                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#detallesPedido{{ $cart->id }}" style="background: #019345;">
-                          <i class="material-icons">visibility</i>  Ver pedido
-                        </button>
-                        <button class="btn btn-primary" type="submit" name="cart_id" value="{{ $cart->id }}" style="background: #019345;">
-                          <i class="material-icons">paid</i>  Entregado
-                        </button>
+                        <div class="col-sm-6">
+                          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#detallesPedido{{ $cart->id }}" style="background: #019345;">
+                            <i class="material-icons">visibility</i>  Ver pedido
+                          </button>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="input-group alert-warning" style="border-radius: 3px;background-color: #019345;padding-right: 10px;padding-left: 10px;">
+                            <label class="input-group-text" for="mediosDePago" style="color: #FFFEFE"><h4>Medio de cobro</h4></label>
+                            <select class="form-select text-center" name="medioDePago" id="mediosDePago" style="color: #019345">
+                                <option value="p1_tot">Efectivo</option>
+                                <option value="p2_tot">PlusCobros</option>
+                                <option value="p3_tot">Devito</option>
+                            </select>
+                            <button class="btn btn-primary" type="submit" name="cart_id" value="{{ $cart->id }}" style="background: #CF2734;">
+                              <i class="material-icons">paid</i>  Entregado
+                            </button>
+                          </div>
+                        </div>
+
                       </form>
                     </div>
 
@@ -144,7 +157,7 @@
         <p>
           <h6 class="container-fluid text-left">Total: $ {{ $cart->total }}
             @if($cart->entrega_tipo == "delivery")
-              <strong>delivery</strong> incluido
+              <strong>delivery</strong> incluido <!--En si esto nunca se va a utilizar en esta sección -->
             @endif
           </h6>
         </p>

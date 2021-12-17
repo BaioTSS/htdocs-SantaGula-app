@@ -92,6 +92,13 @@
                           <i class="material-icons">input</i>  Tomar pedido
                         </button>
                       </form>
+                      <form class="text-right" method="post" action="{{ url('/admin/pedidos/'.$cart->id) }}">
+                        @csrf
+                        {{ method_field('DELETE') }}
+                        <button type="submit" rel="tooltip" title="Eliminar Pedido" class="btn btn-danger" style="background: #019345;">
+                            <i class="material-icons">delete</i>Eliminar Pedido
+                        </button>
+                      </form>
                     </div>
 
                   </div>

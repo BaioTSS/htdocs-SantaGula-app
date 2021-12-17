@@ -91,7 +91,7 @@
                         <p>Entrega tipo delivery por calle {{ $cart->direccion }} a las {{ $cart->horario }}Hs.</p>
                       </div>
                     @elseif($cart->entrega_tipo == "takeaway")
-                      <p>Retiro en SantaGula a las {{ $cart->horario }}Hs.</p>
+                      <p>Retiro en SantaGula a las {{ $cart->horario }} hs.</p>
                     @endif
                   </div>
 

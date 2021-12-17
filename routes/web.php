@@ -57,7 +57,7 @@ Route::middleware(['auth', 'admin'])->group(function () {           //->prefix('
     //Route::get('/admin/pedidos/{menu}/{id}/edit', [App\Http\Controllers\Admin\PedidoController::class, 'edit']); //formulario de edicion
     Route::post('/admin/gestion/{menu}', [App\Http\Controllers\Admin\PedidoController::class, 'update']);       //actualizar
     Route::delete('/admin/pedidos/{id}', [App\Http\Controllers\Admin\PedidoController::class, 'destroy']); //form eliminar
-
+    Route::delete('/admin/gestion/newCaja', [App\Http\Controllers\Admin\PedidoController::class, 'destroyCarts']); //eliminar carts al renovar caja
 
 });
 
