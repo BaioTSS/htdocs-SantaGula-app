@@ -86,6 +86,9 @@ class PedidoController extends Controller
         $cart->status = "entregado";
         $ultimaCaja = Caja::orderBy('id', 'desc')->first();
         $ultimaCaja->total += $cart->total;
+        if ($cart->no_user == null) {
+          $ultimaCaja->total_app += $cart->total;
+        }
         if ($request->input('medioDePago') == "p1_tot") {
           $ultimaCaja->p1_tot += $cart->total;
         }elseif ($request->input('medioDePago') == "p2_tot") {
@@ -127,6 +130,9 @@ class PedidoController extends Controller
         $cart->status = "entregado";
         $ultimaCaja = Caja::orderBy('id', 'desc')->first();
         $ultimaCaja->total += $cart->total;
+        if ($cart->no_user == null) {
+          $ultimaCaja->total_app += $cart->total;
+        }
         if ($request->input('medioDePago') == "p1_tot") {
           $ultimaCaja->p1_tot += $cart->total;
         }elseif ($request->input('medioDePago') == "p2_tot") {
@@ -217,6 +223,7 @@ class PedidoController extends Controller
       $nuevaCaja->p1_tot = 0;
       $nuevaCaja->p2_tot = 0;
       $nuevaCaja->p3_tot = 0;
+      $nuevaCaja->total_app = 0;
       $nuevaCaja->save();
       return back();
   }

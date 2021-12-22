@@ -59,6 +59,9 @@ Route::middleware(['auth', 'admin'])->group(function () {           //->prefix('
     Route::delete('/admin/pedidos/{id}', [App\Http\Controllers\Admin\PedidoController::class, 'destroy']); //form eliminar
     Route::delete('/admin/gestion/newCaja', [App\Http\Controllers\Admin\PedidoController::class, 'destroyCarts']); //eliminar carts al renovar caja
 
+    Route::get('/admin/quick-order', [App\Http\Controllers\Admin\QuickOrderController::class, 'index']);        //listado
+    Route::post('/admin/quick-order', [App\Http\Controllers\Admin\QuickOrderController::class, 'update']); //generando el cart
+    Route::delete('/admin/quick-order', [App\Http\Controllers\CartDetailController::class, 'destroy']); //uso el mismo destroy que un user normal
 });
 
 

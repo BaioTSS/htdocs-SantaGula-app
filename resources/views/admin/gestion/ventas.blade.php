@@ -50,29 +50,26 @@
           </li>
         </ul>
         <hr>
-        <div class="team">
-          <div class="row">
-            <div class="col-sm-8 text-left">
-              <!-- <form method="post" action="{{ url('/admin/gestion/ventas') }}"> -->
-              <form method="post" action="{{ url('/admin/gestion/newCaja') }}">
-                @csrf
-                {{ method_field('DELETE') }}
-                  <div class="col-sm-4 text-left">
-                    <p>Caja actual: {{ $ultimaCaja->dia }}</h>
-                  </div>
-                  <div class="col-sm-4 text-left">
-                    <p>Feha nueva caja</p>
-                    <input type="text" name="fecha" placeholder="dia/mes/año" value="">
-                  </div>
-                  <div class="col-sm-4 text-left">
-                    <button class="btn btn-primary" type="submit" style="background: #019345;">
-                      <i class="material-icons">autorenew</i> Abrir nueva caja
-                    </button>
-                    <a href="{{ url('/admin/gestion/pdf') }}" class="btn btn-danger btn-sm" target="_blank" style="background: #019345;">Generar PDF</a>
-                  </div>
-                </form>
+        <div class="team" style="margin-top: 0px;">
+            <div class="col-sm-4 text-left">
+              <div class="row">
+                <!-- <form method="post" action="{{ url('/admin/gestion/ventas') }}"> -->
+                <form method="post" action="{{ url('/admin/gestion/newCaja') }}">
+                  @csrf
+                  {{ method_field('DELETE') }}
+                    <div class="col-sm-12 text-left">
+                      <p>Caja actual: {{ $ultimaCaja->dia }}</p>
+                      <hr>
+                      <p>Feha nueva caja
+                        <input type="text" name="fecha" placeholder="dia/mes/año" value="" style="margin-left: 10px">
+                      </p>
+                      <button class="btn btn-primary" type="submit" style="background: #019345;">
+                        <i class="material-icons">autorenew</i> Abrir nueva caja
+                      </button>
+                    </div>
+                  </form>
+              </div>
             </div>
-
             <div class="col-sm-4 text-center">
               <div class="row" style="color: #FFFEFE;background: #019345;
               border-radius: 10px;padding-right: 10px;
@@ -89,6 +86,17 @@
                     <h6>Devito $ {{ $ultimaCaja->p3_tot }}</h6>
                   </div>
 
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="row" style="color: #FFFEFE;background: #019345;
+              border-radius: 10px;padding-right: 10px;
+              padding-left: 10px;margin-left: 10px;margin-right: 10px;
+              display: flex;align-items: center;">
+                  <div class="col-sm-12">
+                    <h4><strong>Ventas en linea</strong></h4>
+                    <h5><strong>$ {{ $ultimaCaja->total_app }}</strong></h5>
+                  </div>
               </div>
             </div>
 
@@ -138,9 +146,12 @@
                   </div>
                 </div>
 
+                <!-- <div class="col-sm-12 text-left">
+                  <a href="{{ url('/admin/gestion/pdf') }}" class="btn btn-danger btn-sm" target="_blank" style="background: #019345;">Generar PDF</a>
+                </div> -->
+
               </div>
             </div>
-
           </div>
         </div>
       </div>

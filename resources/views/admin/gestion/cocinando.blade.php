@@ -11,6 +11,7 @@
   <div class="container">
       <div class="section text-center" style="padding-top: 0px;">
         <h2 class="title">Pedidos en la cocina</h2>
+        @if (auth()->user()->admin == 1)
         <ul class="nav nav-tabs" style="background: #019345;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" href="{{ url('/admin/gestion/ventas') }}">
@@ -49,6 +50,23 @@
             </a>
           </li>
         </ul>
+        @endif
+        @if (auth()->user()->admin == 2)
+        <ul class="nav nav-tabs" style="background: #019345;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
+          <li class="nav-item active">
+            <a class="nav-link" data-bs-toggle="tab" href="{{ url('/admin/gestion/cocinando') }}">
+              <span class="material-icons">restaurant_menu</span>
+              Cocinando
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="{{ url('/admin/gestion/delivery') }}">
+              <span class="material-icons">delivery_dining</span>
+              Delivery
+            </a>
+          </li>
+        </ul>
+        @endif
         <hr>
 
         <div class="team">
@@ -64,8 +82,12 @@
                       <div class="row">
                         <div class="col-sm-4">
                           <p class="container-fluid text-left">Codigo del pedido <strong>#{{ $cart->id }}</strong></p>
-                          <p class="container-fluid text-left">Cliente: <strong>{{ $cart->cliente->name }}</strong></p>
-                          <p class="container-fluid text-left">WhatsApp: <A HREF="https://wa.me/549{{ $cart->cliente->phone }}" target="_blank"><strong>{{ $cart->cliente->phone }}</strong></A></p>
+                          @if($cart->no_user == null)
+                            <p class="container-fluid text-left">Cliente: <strong>{{ $cart->cliente->name }}</strong></p>
+                            <p class="container-fluid text-left">WhatsApp: <A HREF="https://wa.me/549{{ $cart->cliente->phone }}" target="_blank"><strong>{{ $cart->cliente->phone }}</strong></A></p>
+                          @else
+                            <p class="container-fluid text-left">Cliente: <strong>{{ $cart->no_user }}</strong></p>
+                          @endif
                         </div>
                         <div class="col-sm-8 text-left">
                           @if($cart->entrega_tipo == "delivery")

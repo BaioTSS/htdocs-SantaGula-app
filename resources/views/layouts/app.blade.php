@@ -66,7 +66,12 @@
 
 
 							    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-									@if (auth()->user()->admin)
+									@if (auth()->user()->admin == 1)
+									<li>
+										<a class="dropdown-item" href="{{ url('/admin/quick-order') }}">
+						            Quick-Order
+						        </a>
+									</li>
 									<li>
 										<a class="dropdown-item" href="{{ url('/admin/categorias') }}">
 						            Gestionar categoriorias
@@ -80,6 +85,13 @@
 									<li>
 										<a class="dropdown-item" href="{{ url('/admin/gestion/ventas') }}">
 						            Gestion
+						        </a>
+									</li>
+									@endif
+									@if (auth()->user()->admin == 2)
+									<li>
+										<a class="dropdown-item" href="{{ url('/admin/gestion/cocinando') }}">
+						            Delivery
 						        </a>
 									</li>
 									@endif

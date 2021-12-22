@@ -64,8 +64,12 @@
                       <div class="row">
                         <div class="col-sm-4">
                           <p class="container-fluid text-left">Codigo del pedido <strong>#{{ $cart->id }}</strong></p>
-                          <p class="container-fluid text-left">Cliente: <strong>{{ $cart->cliente->name }}</strong></p>
-                          <p class="container-fluid text-left">WhatsApp: <A HREF="https://wa.me/549{{ $cart->cliente->phone }}" target="_blank"><strong>{{ $cart->cliente->phone }}</strong></A></p>
+                          @if($cart->no_user == null)
+                            <p class="container-fluid text-left">Cliente: <strong>{{ $cart->cliente->name }}</strong></p>
+                            <p class="container-fluid text-left">WhatsApp: <A HREF="https://wa.me/549{{ $cart->cliente->phone }}" target="_blank"><strong>{{ $cart->cliente->phone }}</strong></A></p>
+                          @else
+                            <p class="container-fluid text-left">Cliente: <strong>{{ $cart->no_user }}</strong></p>
+                          @endif
                         </div>
                         <div class="col-sm-8 text-left">
                           @if($cart->entrega_tipo == "delivery")

@@ -10,9 +10,13 @@
 
 
             <p class="centrado observacion">PEDIDO #{{ $cart->id }}<br>
-              Cliente: {{ $cart->cliente->name}}<br>
-              Para las {{ $cart->horario }}Hs<br>
+              @if($cart->no_user == null)
+                Cliente: {{ $cart->cliente->name}}<br>
+              @else
+                Cliente: {{ $cart->no_user}}<br>
+              @endif
               Entrega tipo {{ $cart->entrega_tipo }}<br>
+              Para las {{ $cart->horario }} hs<br>
               @if($cart->entrega_tipo == "delivery")
                 Direccion {{ $cart->direccion }}
               @endif

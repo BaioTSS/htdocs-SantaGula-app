@@ -23,19 +23,28 @@ class CartDetailController extends Controller
         $cartDetail->save();
 
         $notificacion = 'El plato se ha cargado a tu lista de pedidos exitosamente';
-        return back()->with(compact('notificacion'));
+        if (auth()->user()->admin == 1) {
+          return redirect('/admin/quick-order')->with(compact('notificacion'));
+        }else {
+          return back()->with(compact('notificacion'));
+        }
+
     }
 
     public function destroy(Request $request)
     {
         $cartDetail = CartDetail::find($request->cart_detail_id);
         $cartDetail->delete();
-        //if ($cartDetail->cart_id == auth()->user()->cart->id) {
-          //  $cartDetail->delete();
-        //}
-
         $notificacion = 'El plato se ha eliminado correctamente de la lista de pedidos';
-        return redirect('/home')->with(compact('notificacion'));
+
+        //anexo quick-order
+        if (auth()->user()->admin == 1) {
+          return redirect('/admin/quick-order')->with(compact('notificacion'));
+        }else {
+          return redirect('/home')->with(compact('notificacion'));
+        }
+
+
     }
 
 }
