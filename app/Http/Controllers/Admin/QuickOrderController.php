@@ -17,7 +17,7 @@ class QuickOrderController extends Controller
 
     $query = $request->input('query');
     if (is_numeric($query) == true) {
-      $productos = Productos::where('codigo', 'like', "%$query%")->paginate(10);
+      $productos = Productos::where('codigo', 'like', "$query")->paginate(10);
     }else {
       $productos = Productos::where('nombre', 'like', "%$query%")->paginate(10);
     }
