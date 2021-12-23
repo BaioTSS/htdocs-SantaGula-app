@@ -16,7 +16,12 @@ class QuickOrderController extends Controller
     $turnos = Hora::where('cupos', '>=', 1)->get();
 
     $query = $request->input('query');
-    $productos = Productos::where('nombre', 'like', "%$query%")->paginate(10);
+    if (is_numeric($query) == true) {
+      $productos = Productos::where('codigo', 'like', "%$query%")->paginate(10);
+    }else {
+      $productos = Productos::where('nombre', 'like', "%$query%")->paginate(10);
+    }
+
 
     return view('admin.quickOrder')->with(compact('turnos','productos', 'query'));
   }
